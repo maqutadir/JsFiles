@@ -57,3 +57,6 @@ export var donutVariants = [
     ]
   }
 ];
+
+export const longString =
+  "Let us go there one day and try out new things by ourselves";
