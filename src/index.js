@@ -1,5 +1,6 @@
-const now = Date.now()
+const now = Date.now();
 
-const log = (string, func) => console.log(string, func)
+const log = (string, func) => console.log(string, func);
 
-log('now', now)
+log("now", now);
+console.log("hello world");
