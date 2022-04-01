@@ -12,6 +12,34 @@ class demoClass {
   }
 }
 
-const demoedClass = new demoClass("Maqu");
-demoedClass.displayname();
-demoedClass.displayThis();
+const demoed = new demoClass("Maqu");
+demoed.displayname();
+demoed.displayThis();
+
+class specialDemoClass extends demoClass {
+  constructor(name) {
+    super(name);
+    this.name = name;
+  }
+  displaySpecialMethod() {
+    console.log("I am a special class with inherited name:", this.name);
+  }
+}
+
+const specialDemoed = new specialDemoClass("Maq");
+specialDemoed.displayname();
+specialDemoed.displaySpecialMethod();
+
+function printMe() {
+  this.name = "Maq";
+  console.log("this is awesome", this);
+}
+
+printMe.call({ hello: "Maqu" });
+
+const obj1 = {
+  name: "Sye",
+  age: 23
+};
+
+console.log(obj1.__proto__);
