@@ -1,8 +1,8 @@
 class DesktopTheme {
   constructor() {
     if (!DesktopTheme.instance) {
-      this.previous = null;
       this.theme = "light";
+      this.allPrevious = [];
       DesktopTheme.instance = this;
     }
     return this;
@@ -10,15 +10,19 @@ class DesktopTheme {
 
   changeTheme(themeName) {
     if (this.theme !== themeName) {
-      this.previous = this.theme;
+      this.allPrevious.push(this.theme);
       this.theme = themeName;
       return this.displayThemeChanged();
     }
     return `${themeName} is the current theme and there is no need to change`;
   }
 
+  displayThemesHistory() {
+    return this.allPrevious;
+  }
+
   displayThemeChanged() {
-    return `the theme was changed from ${this.previous} to ${this.theme}`;
+    return `the theme was changed from ${this.allPrevious} to ${this.theme}`;
   }
 }
 
