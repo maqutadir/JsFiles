@@ -43,3 +43,59 @@ const obj1 = {
 };
 
 console.log(obj1.__proto__);
+
+//builder Pattern
+class EmployeeDepartment {
+  constructor(department, manager) {
+    (this.department = department), (this.manager = manager);
+  }
+}
+
+class Employee {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class EmployeeBuilder {
+  constructor(name) {
+    this.employee = new Employee(name);
+  }
+
+  setWorkHours(workHours) {
+    this.employee.workHours = workHours;
+    return this;
+  }
+
+  setRole(role) {
+    this.employee.role = role;
+    return this;
+  }
+
+  setEmployeeDepartment(employeeDepartment) {
+    this.employee.employeeDepartment = employeeDepartment;
+    return this;
+  }
+
+  setAge(age) {
+    this.employee.age = age;
+    return this;
+  }
+
+  setSalary(salary) {
+    this.employee.salary = salary;
+    return this;
+  }
+
+  build() {
+    return this.employee;
+  }
+}
+
+// Creating new object
+let emp1 = new EmployeeBuilder("Jack")
+  .setRole("Store Manager")
+  .setEmployeeDepartment(new EmployeeDepartment("Admin", "Jill"))
+  .build();
+
+console.log("Emp1 details are: ", emp1);
