@@ -9,3 +9,7 @@ console.log("Actions performed", desktopTheme.changeTheme("gray"));
 console.log("Actions performed", desktopTheme.changeTheme("red"));
 console.log("Actions performed", desktopTheme.changeTheme("red"));
 console.log("Actions performed", desktopTheme.changeTheme("red"));
+
+//directly accessing .displayThemeChanged directly
+
+console.log("Actions performed", desktopTheme.displayThemeChanged());
