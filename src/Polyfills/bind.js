@@ -1,9 +1,10 @@
 //polyfill for bind
 
 Function.prototype.mybind = function (obj, ...args) {
-  let func = this;
+  obj._this = this;
+  console.log("The extended object is", obj);
   return function (...args2) {
-    func.apply(obj, [...args, ...args2]);
+    obj._this.apply(obj, [...args, ...args2]);
   };
 };
 
