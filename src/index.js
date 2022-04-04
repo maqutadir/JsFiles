@@ -1,1 +1,1 @@
-document.getElementById("welcomeHeading").innerHTML = "JS Practice Sandbox";
+document.getElementById("welcomeHeading").innerHTML = "JS Practice";
